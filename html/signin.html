@@ -10,17 +10,18 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body onload="clearLocalData();">
     <div>
         <label for="username"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="username" required>
+        <input id="si-username" type="text" placeholder="Enter Username" name="username" required>
 
         <label for="password"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" required>
+        <input id="si-password" type="password" placeholder="Enter Password" name="password" required>
 
-        <button type="submit">Login</button>
+        <button type="submit" onclick="signinGetValue();">Login</button>
     </div>
-    <script src="" async defer></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="../js/signin.js"></script>
 </body>
 
 </html>
