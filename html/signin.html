@@ -7,20 +7,29 @@
     <title>Sign In Page</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/signin.css">
 </head>
 
-<body onload="clearLocalData();">
-    <div class="signin">
-        <label for="username"><b>Username</b></label>
-        <input id="si-username" type="text" placeholder="Enter Username" name="username" required>
-
-        <label for="password"><b>Password</b></label>
-        <input id="si-password" type="password" placeholder="Enter Password" name="password" required>
-
-        <button type="submit" onclick="signinGetValue();">Login</button>
-    </div>
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<body class="text-center" onload="clearLocalData();">
+    <form class="form-signin">
+        <img class="mb-4" src="../img/game-controller-icon.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
+        <label for="si-username" class="sr-only">Username</label>
+        <input type="text" id="si-username" class="form-control" placeholder="Username" required autofocus>
+        <label for="si-password" class="sr-only">Password</label>
+        <input type="password" id="si-password" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="button" onclick="signinGetValue();">Sign in</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="../js/signin.js"></script>
 </body>
 
