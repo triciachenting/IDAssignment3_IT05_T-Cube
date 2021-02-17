@@ -16,16 +16,19 @@
         <div class="text-center mb-4">
             <img class="mb-4" src="../img/game-controller-icon.png" alt="" width="72" height="72">
             <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
+            <p class="mb-3 si-invalid">Invalid username or password!</p>
         </div>
         <div class="form-label-group">
             <input type="text" id="si-username" class="form-control" placeholder="Username" required autofocus>
             <label for="si-username">Username</label>
+            <div class="invalid-feedback si-username-if"></div>
         </div>
         <div class="form-label-group">
             <input type="password" id="si-password" class="form-control" placeholder="Password" required>
             <label for="si-password">Password</label>
+            <div class="invalid-feedback si-password-if"></div>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="button" onclick="signinGetValue();">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" id="si-button" type="button" onclick="signinGetValue();">Sign in</button>
     </form>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
