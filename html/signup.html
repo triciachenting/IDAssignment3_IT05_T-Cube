@@ -20,17 +20,20 @@
         <div class="form-label-group">
             <input type="text" id="su-username" class="form-control" placeholder="Username" required autofocus>
             <label for="su-username">Username</label>
+            <div class="invalid-feedback su-username-if"></div>
         </div>
         <div class="form-label-group">
             <input type="password" id="su-password" class="form-control" placeholder="Password" required>
             <label for="su-password">Password</label>
+            <div class="invalid-feedback su-password-if"></div>
         </div>
         <div class="form-label-group">
             <input type="password" id="su-password2" class="form-control" placeholder="Confirm Password" required>
             <label for="su-password2">Confirm Password</label>
+            <div class="invalid-feedback su-password2-if"></div>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="button" onclick="signupGetValue();">Sign Up</button>
-    </form>
+        <button class="btn btn-lg btn-primary btn-block" id = "su-button" type="button" onclick="signupGetValue();">Sign Up</button>
+	</form>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
