@@ -3,3 +3,4 @@
 ## Credits
 [[RestDB API](https://restdb.io/)]  
 [[Form bootstrap](https://getbootstrap.com/docs/4.0/examples/floating-labels/)]  
+[[Cover bootstrap template](https://getbootstrap.com/docs/4.0/examples/cover/)]
