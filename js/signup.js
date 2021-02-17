@@ -1,7 +1,6 @@
 //Sign Up Function
 function signupGetValue() {
     var signupUsername = document.getElementById("su-username").value.toUpperCase();
-    var signupEmail = document.getElementById("su-email").value.toUpperCase();
     var signupPassword = document.getElementById("su-password").value;
     var signupPasswordConfirmation = document.getElementById("su-password2").value;
     if (signupPassword != signupPasswordConfirmation){
@@ -27,23 +26,18 @@ function signupGetValue() {
                     alert("Username already exist!")
                     break;
                 }
-                if (signupEmail == response[i].Email) {
-                    // #TODO: Change if email exist.
-                    alert("Email already exist!")
-                    break;
-                }
                 if (i + 1 == response.length) {
-                    createNewAccount(signupUsername, signupEmail, signupPassword);
+                    createNewAccount(signupUsername, signupPassword);
                 }
             }
         } else {
-            createNewAccount(signupUsername, signupEmail, signupPassword);
+            createNewAccount(signupUsername, signupPassword);
         }
     });
 }
 
 //Creates a new account
-function createNewAccount(signupUsername, signupEmail, signupPassword) {
+function createNewAccount(signupUsername, signupPassword) {
     $.ajax({
         "async": true,
         "crossDomain": true,
@@ -75,7 +69,6 @@ function createNewAccount(signupUsername, signupEmail, signupPassword) {
             "processData": false,
             "data": JSON.stringify({
                 Username: signupUsername,
-                Email: signupEmail,
                 Password: signupPassword,
                 Highscores: response._id
             })
