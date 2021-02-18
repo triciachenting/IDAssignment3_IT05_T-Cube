@@ -3,7 +3,7 @@ function checkLocalStorageAccount() {
         username = JSON.parse(window.localStorage.getItem('AccountInfo')).Username;
         tagWithAccount = `<a class="nav-link" href="cardmemory.html">Card Memory</a>\
                     <a class="nav-link" href="simongame.html">Simons Game</a>\
-                    <a class="nav-link active" href="#" onclick="logout();">Account(${username})</a>\
+                    <a class="nav-link active" href="#">Account(${username})</a>\
                     <a class="nav-link" href="#" onclick="logout();">Log Out</a>`;
         tagOriginal = $('.accountdetails-nav-list').html();
         $('.accountdetails-nav-list').html(tagOriginal + tagWithAccount);
