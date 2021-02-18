@@ -76,8 +76,3 @@ function signinGetValue() {
         });
     }
 }
-
-//Clear Local Storage on Load
-function clearLocalData() {
-    window.localStorage.clear();
-}

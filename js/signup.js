@@ -156,8 +156,3 @@ function checkCPassword(signupPassword, signupPasswordConfirmation) {
         return true;
     }
 }
-
-//Clear Local Storage on Load
-function clearLocalData() {
-    window.localStorage.clear();
-}
