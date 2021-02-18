@@ -32,6 +32,28 @@ function checkLocalStorage() {
     }
 }
 
+function cmCheckLocalStorage() {
+    tagWithAccount =`<a class="nav-link active" href="#">Card Memory</a>\
+    <a class="nav-link" href="simongame.html">Simons Game</a>`;
+    if (window.localStorage.getItem('AccountInfo')) {
+        username = JSON.parse(window.localStorage.getItem('AccountInfo')).Username;
+        tagWithAccount += `<a class="nav-link" href="accountdetails.html">Account(${username})</a>\
+                            <a class="nav-link" href="#" onclick="logout();">Log Out</a>`;
+    }
+    $('.index-nav-list').html(tagOriginal + tagWithAccount);
+}
+
+function sgCheckLocalStorage() {
+    tagWithAccount =`<a class="nav-link" href="cardmemory.html">Card Memory</a>\
+                        <a class="nav-link active" href="#">Simons Game</a>`;
+    if (window.localStorage.getItem('AccountInfo')) {
+        username = JSON.parse(window.localStorage.getItem('AccountInfo')).Username;
+        tagWithAccount += `<a class="nav-link" href="accountdetails.html">Account(${username})</a>\
+                            <a class="nav-link" href="#" onclick="logout();">Log Out</a>`;
+    }
+    $('.index-nav-list').html(tagOriginal + tagWithAccount);
+}
+
 function logout() {
     window.localStorage.removeItem('AccountInfo');
     alert('You have successfully logged out!');
