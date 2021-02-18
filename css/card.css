@@ -1,0 +1,32 @@
+.boxx{
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.score{
+    display: flex;
+    text-align: left;
+    margin-bottom: 10px;
+    flex-direction: row;
+}
+    
+.score .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score .restart {
+    float: right;
+    cursor: pointer;
+}
+
+
