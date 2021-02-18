@@ -143,7 +143,7 @@ function checkCPassword(signupPassword, signupPasswordConfirmation) {
         $('#su-password2').addClass('is-invalid');
         $('.su-password2-if').text('Password does not match!');
         var checkPassword = setInterval(function () {
-            if (document.getElementById("su-password2").value.toUpperCase() != signupPasswordConfirmation) {
+            if (document.getElementById("su-password2").value != signupPasswordConfirmation) {
                 $('#su-password').removeClass('is-invalid');
                 $('#su-password2').removeClass('is-invalid');
                 document.getElementById('su-button').disabled = false;
