@@ -33,5 +33,5 @@ function checkLocalStorage() {
 function logout() {
     window.localStorage.removeItem('AccountInfo');
     alert('You have successfully logged out!');
-    location.reload();
+    location.replace('../html/index.html');
 }
