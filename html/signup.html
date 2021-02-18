@@ -12,7 +12,20 @@
 </head>
 
 <body onload="clearLocalData();">
-    <form class="form-signin">
+    <div class="d-flex h-100 w-90 p-3 mx-auto flex-column">
+        <header class="masthead">
+            <div class="inner">
+                <h3 class="masthead-brand">
+                    <img src="../img/game-controller-icon.png" width="64px" height="64px"> Fries For Guys
+                </h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="signin.html">Sign In</a>
+                    <a class="nav-link active" href="signup.html">Sign Up</a>
+                </nav>
+            </div>
+        </header>
+    <form class="form-signin my-auto">
         <div class="text-center mb-4">
             <img class="mb-4" src="../img/game-controller-icon.png" alt="" width="72" height="72">
             <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
@@ -34,6 +47,7 @@
         </div>
         <button class="btn btn-lg btn-primary btn-block" id = "su-button" type="button" onclick="signupGetValue();">Sign Up</button>
 	</form>
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
