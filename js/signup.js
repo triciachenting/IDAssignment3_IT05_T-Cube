@@ -156,3 +156,9 @@ function checkCPassword(signupPassword, signupPasswordConfirmation) {
         return true;
     }
 }
+
+function checkLocalStorage(){
+    if (window.localStorage.getItem('AccountInfo')){
+        window.location.replace('../html/index.html');
+    }
+}

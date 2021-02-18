@@ -76,3 +76,9 @@ function signinGetValue() {
         });
     }
 }
+
+function checkLocalStorage(){
+    if (window.localStorage.getItem('AccountInfo')){
+        window.location.replace('../html/index.html');
+    }
+}
