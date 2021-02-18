@@ -47,7 +47,7 @@ function signinGetValue() {
                     if (signupUsername == response[i].Username && signupPassword == response[i].Password) {
                         window.localStorage.setItem("AccountInfo", JSON.stringify(response[i]));
                         setTimeout(function () {
-                            //Redirect to game website.
+                            window.location.replace('../html/index.html');
                         }, 1000);
                         break;
                     } else if ((i + 1) == response.length) {

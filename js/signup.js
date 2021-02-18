@@ -128,7 +128,7 @@ function createNewAccount(signupUsername, signupPassword) {
                 if (signupUsername == response[i].Username && encryptedPassword == response[i].AccountDetails[0].Password) {
                     window.localStorage.setItem("AccountInfo", JSON.stringify(response[i]));
                     setTimeout(function () {
-                        //#TODO: Redirect to game site.
+                        window.location.replace('../html/index.html');
                     }, 1000);
                 }
             }
