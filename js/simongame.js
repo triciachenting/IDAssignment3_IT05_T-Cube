@@ -10,10 +10,37 @@ var level = 0;
 function sgStartGame() {
     $('#sg-button').prop('disabled', true)
     $('#sg-button').text("Starting.....")
-    setTimeout(() => {
-        $('#sg-button').css('opacity', 0)
-        nextRound();
-    }, 1000);
+    userGameID = JSON.parse(window.localStorage.getItem('AccountInfo')).Highscores[0]._id;
+    $.ajax({
+        "async": true,
+        "crossDomain": true,
+        "url": "https://friesforguys-c324.restdb.io/rest/highscores/" + `${userGameID}`,
+        "method": "GET",
+        "headers": {
+            "content-type": "application/json",
+            "x-apikey": "602ac81a5ad3610fb5bb6085",
+            "cache-control": "no-cache"
+        }
+    }).done(function (response) {
+        simonGamesPlayed = response.SimonGameTotalPlayed
+        $.ajax({
+            "async": true,
+            "crossDomain": true,
+            "url": "https://friesforguys-c324.restdb.io/rest/highscores/" + `${userGameID}`,
+            "method": "PUT",
+            "headers": {
+                "content-type": "application/json",
+                "x-apikey": "602ac81a5ad3610fb5bb6085",
+                "cache-control": "no-cache"
+            },
+            "data": JSON.stringify({
+                SimonGameTotalPlayed: Number(simonGamesPlayed + 1)
+            })
+        }).done(function (response) {
+            $('#sg-button').css('opacity', 0);
+            nextRound();
+        });
+    });
 }
 
 function nextRound() {
