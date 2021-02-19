@@ -1,10 +1,10 @@
-setInterval(function(){
+setInterval(function () {
     $('.square').height($('.square').width());
 }, 100)
 
-let sequence = [];
-let playerSequence = [];
-let level = 0;
+var sequence = [];
+var playerSequence = [];
+var level = 0;
 
 function sgStartGame() {
     $('#sg-button').prop('disabled', true)
@@ -15,8 +15,18 @@ function sgStartGame() {
     }, 1000);
 }
 
-function nextRound(){
+function nextRound() {
     level += 1;
     $('#all-tiles').css("pointer-events", "none");
     $('#round-info').text(`Round ${level}`);
+
+    let nextSequence = [...sequence];
+    nextSequence.push(nextTile());
+}
+
+function nextTile() {
+    const tileList = ['red', 'green', 'blue', 'yellow'];
+    const randomTile = tileList[Math.floor(Math.random() * tiles.length)];
+
+    return randomTile;
 }
