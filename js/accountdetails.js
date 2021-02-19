@@ -15,13 +15,13 @@ function checkLocalStorageAccount() {
                             `<div class="score-item">${JSON.parse(localStorage.getItem('AccountInfo')).Highscores[0].CardGameTotalPlayed}</div>` +
                             '<div class="score-item">High Score:</div>' +
                             `<div class="score-item">${JSON.parse(localStorage.getItem('AccountInfo')).Highscores[0].CardGameHighScore} moves</div>` +
-                            '</div>\
+                        '</div>\
                         <div class="col-sm-1" style="background-color: transparent; height: 10px;"></div>\
                         <div class="col-sm-3 d-flex flex-column" id="scoreContainer" style="background-color: black; border: 2px solid rgb(223, 223, 223, 1); border-radius: 40px;">\
                             <div class="score-item" style="margin-top: 10px;"><strong>Simons Game</strong></div>\
                             <div class="score-item">Games Played:</div>'+
                             `<div class="score-item">${JSON.parse(localStorage.getItem('AccountInfo')).Highscores[0].SimonGameTotalPlayed}</div>` +
-                            '<div class="score-item">High Score:</div>'+
+                            '<div class="score-item">High Score:</div>' +
                             `<div class="score-item">${JSON.parse(localStorage.getItem('AccountInfo')).Highscores[0].SimonGameHighScore}</div>` +
                         '</div>\
                     </div>'
@@ -39,22 +39,28 @@ function checkLocalStorageAccount() {
     }
 }
 
-var checkLiveData = function(){
+var checkLiveData = function () {
     setInterval(() => {
-        userID = JSON.parse(window.localStorage.getItem('AccountInfo'))._id;
-        $.ajax({
-            "async": true,
-            "crossDomain": true,
-            "url": "https://friesforguys-c324.restdb.io/rest/accounts/" + `${userID}`,
-            "method": "GET",
-            "headers": {
-                "content-type": "application/json",
-                "x-apikey": "602ac81a5ad3610fb5bb6085",
-                "cache-control": "no-cache"
-            }
-        }).done(function (response) {
-            window.localStorage.removeItem('AccountInfo');
-            window.localStorage.setItem('AccountInfo', JSON.stringify(response));
-        });
+        if (!window.localStorage.getItem('AccountInfo')) {
+            location.reload();
+        }
+        else {
+            userID = ""
+            userID = JSON.parse(window.localStorage.getItem('AccountInfo'))._id;
+            $.ajax({
+                "async": true,
+                "crossDomain": true,
+                "url": "https://friesforguys-c324.restdb.io/rest/accounts/" + `${userID}`,
+                "method": "GET",
+                "headers": {
+                    "content-type": "application/json",
+                    "x-apikey": "602ac81a5ad3610fb5bb6085",
+                    "cache-control": "no-cache"
+                }
+            }).done(function (response) {
+                window.localStorage.removeItem('AccountInfo');
+                window.localStorage.setItem('AccountInfo', JSON.stringify(response));
+            });
+        }
     }, 1000);
 }
