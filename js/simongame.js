@@ -30,3 +30,8 @@ function nextTile() {
 
     return randomTile;
 }
+
+var redSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
+var greenSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
+var blueSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
+var yellowSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
