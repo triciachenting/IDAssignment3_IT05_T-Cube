@@ -1,0 +1,55 @@
+.tile-red {
+    background-color: #f25023;
+    transition: 0.15s;
+}
+
+.tile-red:hover, .tile-red:focus {
+    background-color: #ff451b;
+}
+
+.tile-red:active {
+    background-color: #ff5c37;
+    transform: translateY(10px);
+}
+
+.tile-green {
+    background-color: #7fba01;
+    transition: 0.15s;
+}
+
+.tile-green:hover, .tile-green:focus {
+    background-color: #8cc219;
+}
+
+.tile-green:active {
+    background-color: #a0ea01;
+    transform: translateY(10px);
+}
+
+.tile-yellow {
+    background-color: #ffb901;
+    transition: 0.15s;
+}
+
+.tile-yellow:hover, .tile-yellow:focus {
+    background-color: #ffb901;
+}
+
+.tile-yellow:active {
+    background-color: #ffca3e;
+    transform: translateY(10px);
+}
+
+.tile-blue {
+    background-color: #00a4f0;
+    transition: 0.15s;
+}
+
+.tile-blue:hover, .tile-blue:focus {
+    background-color: #139dde;
+ }
+
+.tile-blue:active {
+    background-color: #2bbcff;
+    transform: translateY(10px);
+}
