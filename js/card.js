@@ -12,3 +12,12 @@ let cards = [...card];
 
 // deck of all cards in game
 const deck = document.getElementById("cards-in-deck");
+
+
+//opens and shows cards
+var cardDisplay = function (){
+    this.classList.toggle("open");
+    this.classList.toggle("show");
+    this.classList.toggle("disabled");
+}
+
