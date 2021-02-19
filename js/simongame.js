@@ -22,11 +22,18 @@ function nextRound() {
 
     let nextSequence = [...sequence];
     nextSequence.push(nextTile());
+    playRound(nextSequence);
+
+    // sequence = [...nextSequence];
+    // setTimeout(() => {
+    //     humanTurn(level);
+    // }, level * 600 + 1000);
 }
 
+const tileList = ['red', 'green', 'blue', 'yellow'];
+
 function nextTile() {
-    const tileList = ['red', 'green', 'blue', 'yellow'];
-    const randomTile = tileList[Math.floor(Math.random() * tiles.length)];
+    const randomTile = tileList[Math.floor(Math.random() * tileList.length)];
 
     return randomTile;
 }
@@ -35,3 +42,27 @@ var redSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"
 var greenSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
 var blueSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
 var yellowSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
+
+const soundList = [redSound, greenSound, blueSound, yellowSound];
+
+function activateTile(color) {
+    index = tileList.indexOf(color)
+    const tile = $(`.tile-${color}`);
+    alert(color)
+    const sound = soundList[index]
+
+    tile.addClass('tile-activated');
+    sound.play();
+
+    setTimeout(() => {
+        tile.removeClass('tile-activated');
+    }, 300);
+}
+
+function playRound(nextSequence) {
+    nextSequence.forEach((color, index) => {
+        setTimeout(() => {
+            activateTile(color);
+        }, (index + 1) * 600);
+    });
+}

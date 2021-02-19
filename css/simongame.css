@@ -9,7 +9,7 @@
     box-shadow: 0 0 0 1px #FF3001 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 10px 0 0 #e62b00, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
 }
 
-.tile-red:active {
+.tile-red:active, .tile-red.tile-activated {
     background-color: #ff5c37;
     transform: translateY(10px);
     box-shadow: 0 0 0 1px #ff5c37 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
@@ -26,7 +26,7 @@
     box-shadow: 0 0 0 1px #8cc219 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 10px 0 0 #74a802, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6)
 }
 
-.tile-green:active {
+.tile-green:active, .tile-green.tile-activated {
     background-color: #a0ea01;
     transform: translateY(10px);
     box-shadow: 0 0 0 1px #a0ea01 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
@@ -43,7 +43,7 @@
     box-shadow: 0 0 0 1px #ffb901 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #c28e07, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
 }
 
-.tile-yellow:active {
+.tile-yellow:active, .tile-yellow.tile-activated {
     background-color: #ffca3e;
     transform: translateY(10px);
     box-shadow: 0 0 0 1px #ffca3e inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
@@ -60,7 +60,7 @@
     box-shadow: 0 0 0 1px #139dde inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 10px 0 0 #0c7cb0, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
 }
 
-.tile-blue:active {
+.tile-blue:active, .tile-blue.tile-activated {
     background-color: #2bbcff;
     transform: translateY(10px);
     box-shadow: 0 0 0 1px #2bbcff inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
