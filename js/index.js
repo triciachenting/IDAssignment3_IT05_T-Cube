@@ -7,8 +7,7 @@ mainNoAccount = '<h1 class="cover-heading">Memory Games</h1>\
                 <p class="lead">\
                     <a href="signin.html" class="btn btn-lg btn-secondary">Sign In</a>\
                     <a href="signup.html" class="btn btn-lg btn-secondary">Sign Up</a>\
-                </p>\
-                <a href="#"><u>Continue as a guest.</u></a>'
+                </p>'
 
 mainWithAccount = '<h1 class="cover-heading">Memory Games</h1>\
                 <p class="lead">The two memory games.</p>\
@@ -39,8 +38,12 @@ function cmCheckLocalStorage() {
         username = JSON.parse(window.localStorage.getItem('AccountInfo')).Username;
         tagWithAccount += `<a class="nav-link" href="accountdetails.html">Account(${username})</a>\
                             <a class="nav-link" href="#" onclick="logout();">Log Out</a>`;
+                            $('.index-nav-list').html(tagOriginal + tagWithAccount);
     }
-    $('.index-nav-list').html(tagOriginal + tagWithAccount);
+    else{
+        alert("You need to be logged in to play!");
+        location.replace("../html/index.html");
+    }
 }
 
 function sgCheckLocalStorage() {
@@ -50,8 +53,12 @@ function sgCheckLocalStorage() {
         username = JSON.parse(window.localStorage.getItem('AccountInfo')).Username;
         tagWithAccount += `<a class="nav-link" href="accountdetails.html">Account(${username})</a>\
                             <a class="nav-link" href="#" onclick="logout();">Log Out</a>`;
+                            $('.index-nav-list').html(tagOriginal + tagWithAccount);
     }
-    $('.index-nav-list').html(tagOriginal + tagWithAccount);
+    else{
+        alert("You need to be logged in to play!");
+        location.replace("../html/index.html");
+    }
 }
 
 function logout() {
