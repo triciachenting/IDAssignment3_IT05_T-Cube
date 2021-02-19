@@ -22,9 +22,17 @@ function checkLocalStorage() {
         username = JSON.parse(window.localStorage.getItem('AccountInfo')).Username;
         tagWithAccount = `<a class="nav-link" href="cardmemory.html">Card Memory</a>\
                     <a class="nav-link" href="simongame.html">Simons Game</a>\
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    <a class="nav-link active" href="#" onclick="logout();">Account(${username})</a>\
+                    <a class="nav-link" href="#" onclick="logout();">Log Out</a>`;
+=======
+=======
+>>>>>>> 612f924df378c1a0cd306adfca9ba440192920fa
                     <a class="nav-link" href="accountdetails.html">Account(${username})</a>\
                     <a class="nav-link" href="#" onclick="logout();">Log Out</a>`;
         $('.index-nav-list').html(tagOriginal + tagWithAccount);
+>>>>>>> 612f924df378c1a0cd306adfca9ba440192920fa
         $('.index-main').html(mainWithAccount);
     } else {
         $('.index-nav-list').html(tagOriginal + tagNoAccount);
