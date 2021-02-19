@@ -124,14 +124,26 @@ function createNewAccount(signupUsername, signupPassword) {
                 Highscores: response._id
             })
         }).done(function (response) {
-            for (i = 0; i < response.length; i++) {
-                if (signupUsername == response[i].Username && encryptedPassword == response[i].AccountDetails[0].Password) {
-                    window.localStorage.setItem("AccountInfo", JSON.stringify(response[i]));
-                    setTimeout(function () {
-                        window.location.replace('../html/index.html');
-                    }, 1000);
+            $.ajax({
+                "async": true,
+                "crossDomain": true,
+                "url": "https://friesforguys-c324.restdb.io/rest/accounts",
+                "method": "GET",
+                "headers": {
+                    "content-type": "application/json",
+                    "x-apikey": "602ac81a5ad3610fb5bb6085",
+                    "cache-control": "no-cache"
                 }
-            }
+            }).done(function (response) {
+                for (i = 0; i < response.length; i++) {
+                    if (signupUsername == response[i].Username && signupPassword == response[i].Password) {
+                        window.localStorage.setItem("AccountInfo", JSON.stringify(response[i]));
+                        setTimeout(function () {
+                            window.location.replace('../html/index.html');
+                        }, 1000);
+                    }
+                }
+            })
         })
     })
 }
@@ -157,8 +169,8 @@ function checkCPassword(signupPassword, signupPasswordConfirmation) {
     }
 }
 
-function checkLocalStorage(){
-    if (window.localStorage.getItem('AccountInfo')){
+function checkLocalStorage() {
+    if (window.localStorage.getItem('AccountInfo')) {
         window.location.replace('../html/index.html');
     }
 }
