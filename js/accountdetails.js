@@ -1,5 +1,6 @@
 function checkLocalStorageAccount() {
     if (window.localStorage.getItem('AccountInfo')) {
+        checkLiveData();
         username = JSON.parse(window.localStorage.getItem('AccountInfo')).Username;
         tagWithAccount = `<a class="nav-link" href="cardmemory.html">Card Memory</a>\
                     <a class="nav-link" href="simongame.html">Simons Game</a>\
@@ -36,4 +37,24 @@ function checkLocalStorageAccount() {
         alert("You need to be logged in to see your profile!");
         location.replace("../html/index.html");
     }
+}
+
+var checkLiveData = function(){
+    setInterval(() => {
+        userID = JSON.parse(window.localStorage.getItem('AccountInfo'))._id;
+        $.ajax({
+            "async": true,
+            "crossDomain": true,
+            "url": "https://friesforguys-c324.restdb.io/rest/accounts/" + `${userID}`,
+            "method": "GET",
+            "headers": {
+                "content-type": "application/json",
+                "x-apikey": "602ac81a5ad3610fb5bb6085",
+                "cache-control": "no-cache"
+            }
+        }).done(function (response) {
+            window.localStorage.removeItem('AccountInfo');
+            window.localStorage.setItem('AccountInfo', JSON.stringify(response));
+        });
+    }, 1000);
 }
