@@ -1,3 +1,5 @@
+$('#cards-in-deck').css("pointer-events", "none");
+
 // cards array holds all cards
 let card = document.getElementsByClassName("card");
 let cards = [...card];
@@ -172,6 +174,7 @@ function startGame() {
                 CardGameTotalPlayed: Number(cardGamesPlayed + 1)
             })
         }).done(function (response) {
+            $('#cards-in-deck').css("pointer-events", "auto");
             startGame2();
         });
     });
