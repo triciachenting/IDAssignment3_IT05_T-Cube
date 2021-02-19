@@ -143,9 +143,41 @@ function shuffle(array) {
 //shuffles cards when reloaded
 document.body.onload = startGame();
 
-//function to start a game
+//RestDB Update
 function startGame() {
-
+    userGameID = JSON.parse(window.localStorage.getItem('AccountInfo')).Highscores[0]._id;
+    $.ajax({
+        "async": true,
+        "crossDomain": true,
+        "url": "https://friesforguys-c324.restdb.io/rest/highscores/" + `${userGameID}`,
+        "method": "GET",
+        "headers": {
+            "content-type": "application/json",
+            "x-apikey": "602ac81a5ad3610fb5bb6085",
+            "cache-control": "no-cache"
+        }
+    }).done(function (response) {
+        cardGamesPlayed = response.CardGameTotalPlayed
+        $.ajax({
+            "async": true,
+            "crossDomain": true,
+            "url": "https://friesforguys-c324.restdb.io/rest/highscores/" + `${userGameID}`,
+            "method": "PUT",
+            "headers": {
+                "content-type": "application/json",
+                "x-apikey": "602ac81a5ad3610fb5bb6085",
+                "cache-control": "no-cache"
+            },
+            "data": JSON.stringify({
+                CardGameTotalPlayed: Number(cardGamesPlayed + 1)
+            })
+        }).done(function (response) {
+            startGame2();
+        });
+    });
+}
+//function to start a game
+function startGame2() {
     // empty the array for opened cards
     openedCards = [];
 
@@ -179,13 +211,43 @@ function startGame() {
 //replay
 function playAgain() {
     modal.classList.remove("show");
-    startGame();
+    startGame2();
 }
 
 function congratulations() {
     if (matchedCard.length == 16) {
         clearInterval(interval);
-        finalTime = timer.innerHTML;
+        $.ajax({
+            "async": true,
+            "crossDomain": true,
+            "url": "https://friesforguys-c324.restdb.io/rest/highscores/" + `${userGameID}`,
+            "method": "GET",
+            "headers": {
+                "content-type": "application/json",
+                "x-apikey": "602ac81a5ad3610fb5bb6085",
+                "cache-control": "no-cache"
+            }
+        }).done(function (response) {
+            cardGamesHigh = response.CardGameHighScore
+            if (moves < cardGamesHigh || cardGamesHigh == 0) {
+                $.ajax({
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://friesforguys-c324.restdb.io/rest/highscores/" + `${userGameID}`,
+                    "method": "PUT",
+                    "headers": {
+                        "content-type": "application/json",
+                        "x-apikey": "602ac81a5ad3610fb5bb6085",
+                        "cache-control": "no-cache"
+                    },
+                    "data": JSON.stringify({
+                        CardGameHighScore: Number(moves)
+                    })
+                }).done(function (response) {
+                    console.log("Uploaded")
+                });
+            }
+        });
     };
 }
 //add event listeners to each card
