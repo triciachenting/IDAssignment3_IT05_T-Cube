@@ -7,8 +7,7 @@ mainNoAccount = '<h1 class="cover-heading">Memory Games</h1>\
                 <p class="lead">\
                     <a href="signin.html" class="btn btn-lg btn-secondary">Sign In</a>\
                     <a href="signup.html" class="btn btn-lg btn-secondary">Sign Up</a>\
-                </p>\
-                <a href="#"><u>Continue as a guest.</u></a>'
+                </p>'
 
 mainWithAccount = '<h1 class="cover-heading">Memory Games</h1>\
                 <p class="lead">The two memory games.</p>\
