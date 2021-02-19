@@ -100,16 +100,57 @@ function activate(tileIndex) {
 
     const remainingTaps = sequence.length - playerSequence.length;
     if (playerSequence[index] !== sequence[index]) {
-        alert('You pressed the wrong tile, gameover!');
-        sequence = [];
-        playerSequence = [];
-        level = 0;
-        $('#sg-button').prop('disabled', false)
-        $('#sg-button').text('Restart')
-        $('#sg-button').css('opacity', 1)
-        $('#round-info').text('Round 0');
-        $('#all-tiles').css("pointer-events", "none");
-        return;
+        alert('You pressed the wrong tile, gameover!'); userGameID = JSON.parse(window.localStorage.getItem('AccountInfo')).Highscores[0]._id;
+        $.ajax({
+            "async": true,
+            "crossDomain": true,
+            "url": "https://friesforguys-c324.restdb.io/rest/highscores/" + `${userGameID}`,
+            "method": "GET",
+            "headers": {
+                "content-type": "application/json",
+                "x-apikey": "602ac81a5ad3610fb5bb6085",
+                "cache-control": "no-cache"
+            }
+        }).done(function (response) {
+            simonGamesHigh = response.SimonGameHighScore
+            if (level - 1 > simonGamesHigh) {
+                $.ajax({
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://friesforguys-c324.restdb.io/rest/highscores/" + `${userGameID}`,
+                    "method": "PUT",
+                    "headers": {
+                        "content-type": "application/json",
+                        "x-apikey": "602ac81a5ad3610fb5bb6085",
+                        "cache-control": "no-cache"
+                    },
+                    "data": JSON.stringify({
+                        SimonGameHighScore: Number(level - 1)
+                    })
+                }).done(function (response) {
+                    sequence = [];
+                    playerSequence = [];
+                    level = 0;
+                    $('#sg-button').prop('disabled', false)
+                    $('#sg-button').text('Restart')
+                    $('#sg-button').css('opacity', 1)
+                    $('#round-info').text('Round 0');
+                    $('#all-tiles').css("pointer-events", "none");
+                    return;
+                });
+            }
+            else{
+                sequence = [];
+                playerSequence = [];
+                level = 0;
+                $('#sg-button').prop('disabled', false)
+                $('#sg-button').text('Restart')
+                $('#sg-button').css('opacity', 1)
+                $('#round-info').text('Round 0');
+                $('#all-tiles').css("pointer-events", "none");
+                return;
+            }
+        });
     }
 
     if (playerSequence.length === sequence.length) {
