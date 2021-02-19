@@ -2,6 +2,7 @@ setInterval(function () {
     $('.square').height($('.square').width());
 }, 100)
 
+$('#all-tiles').css("pointer-events", "none");
 var sequence = [];
 var playerSequence = [];
 var level = 0;
@@ -71,6 +72,18 @@ function activate(tileIndex) {
     soundList[tileIndex].play();
 
     const remainingTaps = sequence.length - playerSequence.length;
+    if (playerSequence[index] !== sequence[index]) {
+        alert('You pressed the wrong tile, gameover!');
+        sequence = [];
+        playerSequence = [];
+        level = 0;
+        $('#sg-button').prop('disabled', false)
+        $('#sg-button').text('Restart')
+        $('#sg-button').css('opacity', 1)
+        $('#round-info').text('Round 0');
+        $('#all-tiles').css("pointer-events", "none");
+        return;
+    }
 
     if (playerSequence.length === sequence.length) {
         playerSequence = [];
