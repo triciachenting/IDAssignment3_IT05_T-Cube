@@ -175,10 +175,17 @@ function startGame() {
             })
         }).done(function (response) {
             $('#cards-in-deck').css("pointer-events", "auto");
+            $('#loadgame').css("display", "none")
             startGame2();
         });
     });
 }
+
+//restart game
+function restartGame(){
+    location.reload();
+}
+
 //function to start a game
 function startGame2() {
     // empty the array for opened cards
@@ -247,7 +254,6 @@ function congratulations() {
                         CardGameHighScore: Number(moves)
                     })
                 }).done(function (response) {
-                    console.log("Uploaded")
                 });
             }
         });
