@@ -1,0 +1,67 @@
+.tile-red {
+    background-color: #f25023;
+    transition: 0.15s;
+    box-shadow: 0 0 0 1px #f25023 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #c93a12, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+.tile-red:hover, .tile-red:focus {
+    background-color: #ff451b;
+    box-shadow: 0 0 0 1px #FF3001 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 10px 0 0 #e62b00, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
+}
+
+.tile-red:active {
+    background-color: #ff5c37;
+    transform: translateY(10px);
+    box-shadow: 0 0 0 1px #ff5c37 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.tile-green {
+    background-color: #7fba01;
+    transition: 0.15s;
+    box-shadow: 0 0 0 1px #7fba01 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #638f05, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+.tile-green:hover, .tile-green:focus {
+    background-color: #8cc219;
+    box-shadow: 0 0 0 1px #8cc219 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 10px 0 0 #74a802, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6)
+}
+
+.tile-green:active {
+    background-color: #a0ea01;
+    transform: translateY(10px);
+    box-shadow: 0 0 0 1px #a0ea01 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.tile-yellow {
+    background-color: #ffb901;
+    transition: 0.15s;
+    box-shadow: 0 0 0 1px #ffb901 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #c28e07, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+.tile-yellow:hover, .tile-yellow:focus {
+    background-color: #ffb901;
+    box-shadow: 0 0 0 1px #ffb901 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #c28e07, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+.tile-yellow:active {
+    background-color: #ffca3e;
+    transform: translateY(10px);
+    box-shadow: 0 0 0 1px #ffca3e inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.tile-blue {
+    background-color: #00a4f0;
+    transition: 0.15s;
+    box-shadow: 0 0 0 1px #00a4f0 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #0883bc, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+.tile-blue:hover, .tile-blue:focus {
+    background-color: #139dde;
+    box-shadow: 0 0 0 1px #139dde inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 10px 0 0 #0c7cb0, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
+}
+
+.tile-blue:active {
+    background-color: #2bbcff;
+    transform: translateY(10px);
+    box-shadow: 0 0 0 1px #2bbcff inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
