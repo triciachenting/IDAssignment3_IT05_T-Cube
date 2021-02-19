@@ -18,16 +18,16 @@ function sgStartGame() {
 function nextRound() {
     level += 1;
     $('#all-tiles').css("pointer-events", "none");
-    $('#round-info').text(`Round ${level}`);
+    $('#round-info').text(`Round ${level} | Tiles Left: ${level}`);
 
     let nextSequence = [...sequence];
     nextSequence.push(nextTile());
     playRound(nextSequence);
 
-    // sequence = [...nextSequence];
-    // setTimeout(() => {
-    //     humanTurn(level);
-    // }, level * 600 + 1000);
+    sequence = [...nextSequence];
+    setTimeout(() => {
+        $('#all-tiles').css("pointer-events", "auto");
+    }, level * 600 + 1000);
 }
 
 const tileList = ['red', 'green', 'blue', 'yellow'];
@@ -48,8 +48,7 @@ const soundList = [redSound, greenSound, blueSound, yellowSound];
 function activateTile(color) {
     index = tileList.indexOf(color)
     const tile = $(`.tile-${color}`);
-    alert(color)
-    const sound = soundList[index]
+    const sound = soundList[index];
 
     tile.addClass('tile-activated');
     sound.play();
@@ -65,4 +64,21 @@ function playRound(nextSequence) {
             activateTile(color);
         }, (index + 1) * 600);
     });
+}
+
+function activate(tileIndex) {
+    const index = playerSequence.push(tileList[tileIndex]) - 1;
+    soundList[tileIndex].play();
+
+    const remainingTaps = sequence.length - playerSequence.length;
+
+    if (playerSequence.length === sequence.length) {
+        playerSequence = [];
+        $('#round-info').text(`Round ${level} | Level Done!`);
+        setTimeout(() => {
+            nextRound();
+        }, 1000);
+        return;
+    }
+    $('#round-info').text(`Round ${level} | Tiles Left: ${remainingTaps}`);
 }
