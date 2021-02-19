@@ -13,14 +13,14 @@ mainWithAccount = '<h1 class="cover-heading">Memory Games</h1>\
                 <p class="lead">The two memory games.</p>\
                 <p class="lead">\
                     <a href="cardmemory.html" class="btn btn-lg btn-secondary">Card Memory</a>\
-                    <a href="simongame.html" class="btn btn-lg btn-secondary">Simons Game</a>\
+                    <a href="simongame.html" class="btn btn-lg btn-secondary">Simon\'s Game</a>\
                 </p>'
 
 function checkLocalStorage() {
     if (window.localStorage.getItem('AccountInfo')) {
         username = JSON.parse(window.localStorage.getItem('AccountInfo')).Username;
         tagWithAccount = `<a class="nav-link" href="cardmemory.html">Card Memory</a>\
-                    <a class="nav-link" href="simongame.html">Simons Game</a>\
+                    <a class="nav-link" href="simongame.html">Simon's Game</a>\
                     <a class="nav-link" href="accountdetails.html">Account(${username})</a>\
                     <a class="nav-link" href="#" onclick="logout();">Log Out</a>`;
         $('.index-nav-list').html(tagOriginal + tagWithAccount);
@@ -33,7 +33,7 @@ function checkLocalStorage() {
 
 function cmCheckLocalStorage() {
     tagWithAccount = `<a class="nav-link active" href="#">Card Memory</a>\
-    <a class="nav-link" href="simongame.html">Simons Game</a>`;
+    <a class="nav-link" href="simongame.html">Simon's Game</a>`;
     if (window.localStorage.getItem('AccountInfo')) {
         username = JSON.parse(window.localStorage.getItem('AccountInfo')).Username;
         tagWithAccount += `<a class="nav-link" href="accountdetails.html">Account(${username})</a>\
@@ -48,7 +48,7 @@ function cmCheckLocalStorage() {
 
 function sgCheckLocalStorage() {
     tagWithAccount = `<a class="nav-link" href="cardmemory.html">Card Memory</a>\
-                        <a class="nav-link active" href="#">Simons Game</a>`;
+                        <a class="nav-link active" href="#">Simon's Game</a>`;
     if (window.localStorage.getItem('AccountInfo')) {
         username = JSON.parse(window.localStorage.getItem('AccountInfo')).Username;
         tagWithAccount += `<a class="nav-link" href="accountdetails.html">Account(${username})</a>\
