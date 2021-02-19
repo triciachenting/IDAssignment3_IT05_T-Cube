@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../css/card.css">
 </head>
 
-<body class="text-center" onload="cmCheckLocalStorage();">
+<body class="text-center">
     <div class="d-flex h-100 w-90 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
             <div class="inner">
@@ -33,7 +33,7 @@
                 <section>
                     <h1 class="h3 mb-3 font-weight-normal text-white">Card Matching Memory Game</h1>
                 </section>
-                <section  class="score">
+                <section class="score">
                     <ul style="color:yellow;" class="stars">
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
@@ -41,14 +41,14 @@
                         &nbsp
                     </ul>
 
-                        <span class="moves">0</span> &nbsp Move(s) &nbsp
-                    
+                    <span class="moves">0</span> &nbsp Move(s) &nbsp
+
                     <div class="timer">
                     </div>
                     &nbsp
-                        <div class="restart" onclick=startGame()>
-                            <i class="fa fa-repeat"></i>
-                        </div>
+                    <div class="restart" onclick=startGame()>
+                        <i class="fa fa-repeat"></i>
+                    </div>
                 </section>
             </div>
 
@@ -95,6 +95,7 @@
         crossorigin="anonymous"></script>
     <script src="../js/index.js"></script>
     <script src="../js/card.js"></script>
+    <script>window.onload = function () { cmCheckLocalStorage(); }</script>
 </body>
 
 </html>
