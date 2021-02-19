@@ -1,19 +1,21 @@
 /*main content display*/
-.boxx{
+
+.boxx {
     display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 /*score panel display*/
-.score{
+
+.score {
     display: flex;
     text-align: left;
     margin-bottom: 10px;
     flex-direction: row;
 }
-    
+
 .score .stars {
     margin: 0;
     padding: 0;
@@ -32,25 +34,32 @@
 }
 
 /*main game cards display*/
+
 .deck {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    width:80%;
-    background-color: turquoise;
-    padding: 16px;
-    border-radius: 5px;    
+    width: 85%;
+	background: #716F71;
+	padding: 1rem;
+	border-radius: 4px;
+	box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
 }
 
 .deck .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    height: 60px;
-    width: 60px;
-    background-color:teal;
+    height: 3.7rem;
+	width: 3.7rem;
+	margin: 0.2rem 0.2rem;
+	background: #141214;;
+	font-size: 0;
+	color: black;
+	border-radius: 5px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
 .deck .card.open {
@@ -58,8 +67,8 @@
     background: white;
     cursor: default;
     animation-name: flipopen;
-    backface-visibility: visible;
-    animation-duration: 0.5s;
+    backface-visibility: visible !important;
+    animation-duration: 1s;
 }
 
 .deck .card.show {
@@ -71,15 +80,15 @@
     background-color: yellowgreen;
     font: 40px;
     animation-name: match;
-    backface-visibility: visible;
+    backface-visibility: visible !important;
     animation-duration: 0.5s;
 }
 
 .deck .card.unmatched {
-    animation-name: notmatched;
-    backface-visibility: visible;
+    animation-name: unmatched;
+    backface-visibility: visible !important;
     animation-duration: 0.5s;
-    background:  red;
+    background: red;
 }
 
 .deck .card.disabled {
@@ -87,75 +96,62 @@
     opacity: 0.9;
 }
 
-
 /*animations*/
-@keyframes flipopen{
-    from{
+
+@keyframes flipopen {
+    from {
         transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
         animation-timing-function: ease-in;
         opacity: 0;
     }
-
     40% {
         transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
         animation-timing-function: ease-in;
     }
-
     60% {
         transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
-        opcaity: 1;
+        opacity: 1;
     }
-
     80% {
         transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
     }
-
-    to{
+    to {
         transform: perspective(400px);
     }
 }
 
-@keyframes match{
+@keyframes match {
     from {
-		transform: scale3d(1, 1, 1);
-	}
-
-	30% {
-		transform: scale3d(1.25, 0.75, 1);
-	}
-
-	40% {
-		transform: scale3d(0.75, 1.25, 1);
-	}
-
-	50% {
-		transform: scale3d(1.15, 0.85, 1);
-	}
-
-	65% {
-		transform: scale3d(.95, 1.05, 1);
-	}
-
-	75% {
-		transform: scale3d(1.05, .95, 1);
-	}
-
-	to {
-		transform: scale3d(1, 1, 1);
-	}
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+        transform: scale3d(.95, 1.05, 1);
+    }
+    75% {
+        transform: scale3d(1.05, .95, 1);
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+    }
 }
 
 @keyframes unmatched {
     from {
-		transform: scale3d(1, 1, 1);
-	}
-
-	50% {
-		transform: scale3d(1.2, 1.2, 1.2);
-	}
-
-	to {
-		transform: scale3d(1, 1, 1);
-	}
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        transform: scale3d(1.2, 1.2, 1.2);
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+    }
 }
-
