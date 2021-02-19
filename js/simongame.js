@@ -114,6 +114,8 @@ function activate(tileIndex) {
         }).done(function (response) {
             simonGamesHigh = response.SimonGameHighScore
             if (level - 1 > simonGamesHigh) {
+                $('#sg-button').text('Updating..')
+                $('#sg-button').css('opacity', 1)
                 $.ajax({
                     "async": true,
                     "crossDomain": true,
@@ -131,15 +133,14 @@ function activate(tileIndex) {
                     sequence = [];
                     playerSequence = [];
                     level = 0;
-                    $('#sg-button').prop('disabled', false)
                     $('#sg-button').text('Restart')
-                    $('#sg-button').css('opacity', 1)
+                    $('#sg-button').prop('disabled', false)
                     $('#round-info').text('Round 0');
                     $('#all-tiles').css("pointer-events", "none");
                     return;
                 });
             }
-            else{
+            else {
                 sequence = [];
                 playerSequence = [];
                 level = 0;
@@ -152,8 +153,7 @@ function activate(tileIndex) {
             }
         });
     }
-
-    if (playerSequence.length === sequence.length) {
+    else if (playerSequence.length === sequence.length) {
         playerSequence = [];
         $('#round-info').text(`Round ${level} | Level Done!`);
         setTimeout(() => {
@@ -161,5 +161,7 @@ function activate(tileIndex) {
         }, 1000);
         return;
     }
-    $('#round-info').text(`Round ${level} | Tiles Left: ${remainingTaps}`);
+    else {
+        $('#round-info').text(`Round ${level} | Tiles Left: ${remainingTaps}`);
+    }
 }
