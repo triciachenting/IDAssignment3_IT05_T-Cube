@@ -1,5 +1,6 @@
 # IDAssignment3_IT05_T-Cube
 Website is available [here](https://triciachenting.github.io/IDAssignment3_IT05_T-Cube/html/index.html)  
+**This website was created for use on desktop/laptop devices.**  
 Our project was inspired by the rise in the number of alzheimer's disease and dementia patients.  
 Research has shown that playing memory games like these "Memory Card game" and "Simon Game", helps to stimulate thinking and slows down the progression of the disease.  
 We believe that our website would be beneficial for not only patients with alzheimer's or dementia, but also children, as these games can help to improve their brain functions, 
