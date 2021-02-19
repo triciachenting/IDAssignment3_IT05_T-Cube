@@ -30,12 +30,12 @@
             <h1 class="h3 mb-3 font-weight-normal text-white" id="round-info">Round 0</h1>
             <div class="d-flex flex-wrap mx-auto justify-content-center" id="all-tiles">
                 <div class="d-flex col-6 column mx-1 my-2 justify-content-center">
-                    <div class="col-3 mx-1 square tile-red"></div>
-                    <div class="col-3 mx-1 square tile-green"></div>
+                    <div class="col-3 mx-1 square tile-red" onclick="activate(0);"></div>
+                    <div class="col-3 mx-1 square tile-green" onclick="activate(1);"></div>
                 </div>
                 <div class="d-flex col-6 column mx-1 my-2 justify-content-center">
-                    <div class="col-3 mx-1 square tile-blue"></div>
-                    <div class="col-3 mx-1 square tile-yellow"></div>
+                    <div class="col-3 mx-1 square tile-blue" onclick="activate(2);"></div>
+                    <div class="col-3 mx-1 square tile-yellow" onclick="activate(3);"></div>
                 </div>
             </div>
             <button class="btn btn-lg btn-light mx-auto mt-2" id="sg-button" type="button" onclick="sgStartGame();">Start Game</button>
