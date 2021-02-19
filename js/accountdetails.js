@@ -63,7 +63,7 @@ var checkLiveData = function () {
                 $('#cgtp').text(response.Highscores[0].CardGameTotalPlayed);
                 $('#cghs').text(response.Highscores[0].CardGameHighScore + " moves");
                 $('#sgtp').text(response.Highscores[0].SimonGameTotalPlayed);
-                $('#sghs').text("Level " + response.Highscores[0].SimonGameHighScore);
+                $('#sghs').text(response.Highscores[0].SimonGameHighScore);
             });
         }
     }, 2000);
